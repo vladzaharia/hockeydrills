@@ -46,12 +46,6 @@ class ElapsedTimeFormatter: Formatter {
     }
 }
 
-//#Preview {
-//    ElapsedTimeView()
-//}
-
-struct ElapsedTimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ElapsedTimeView()
-    }
+#Preview {
+    ElapsedTimeView()
 }

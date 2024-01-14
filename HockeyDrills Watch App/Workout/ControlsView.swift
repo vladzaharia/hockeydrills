@@ -61,15 +61,8 @@ struct ControlsView: View {
     }
 }
 
-//#Preview {
-//    ControlsView()
-//        .environment(DrillManager())
-//}
-
-struct ControlsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlsView()
-            .environment(DrillManager())
-            .environmentObject(WorkoutManager())
-    }
+#Preview {
+    ControlsView()
+        .environment(DrillManager())
+        .environmentObject(WorkoutManager())
 }

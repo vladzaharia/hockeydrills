@@ -28,22 +28,10 @@ struct WorkoutsListView: View {
         }
         .listStyle(.carousel)
         .navigationTitle("Workouts")
+        .navigationBarTitleDisplayMode(.large)
         .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
             SessionPagingView()
         }
-    }
-}
-
-//#Preview {
-//    WorkoutsListView()
-//        .environmentObject(WorkoutManager())
-//}
-
-struct WorkoutsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        WorkoutsListView()
-            .environmentObject(WorkoutManager())
-            .environment(DrillManager())
     }
 }
 
@@ -75,4 +63,10 @@ extension HKWorkoutActivityType {
             return "sportscourt.circle"
         }
     }
+}
+
+#Preview {
+    WorkoutsListView()
+        .environmentObject(WorkoutManager())
+        .environment(DrillManager())
 }

@@ -30,6 +30,7 @@ struct DrillsListView: View {
         }
         .listStyle(.carousel)
         .navigationTitle("Drills")
+        .navigationBarTitleDisplayMode(.large)
         .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
             SessionPagingView()
         }
@@ -49,16 +50,8 @@ struct DrillsListView: View {
     }
 }
 
-//#Preview {
-//    DrillsListView()
-//    .environmentObject(WorkoutManager())
-//    .environment(DrillManager())
-//}
-
-struct DrillsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        DrillsListView()
-        .environmentObject(WorkoutManager())
-        .environment(DrillManager())
-    }
+#Preview {
+    DrillsListView()
+    .environmentObject(WorkoutManager())
+    .environment(DrillManager())
 }

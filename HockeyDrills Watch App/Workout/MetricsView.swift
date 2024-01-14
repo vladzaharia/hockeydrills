@@ -79,16 +79,8 @@ private struct MetricsTimelineSchedule: TimelineSchedule {
     }
 }
 
-//#Preview {
-//    MetricsView()
-//        .environment(DrillManager())
-//}
-
-
-struct MetricsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MetricsView()
-            .environment(DrillManager())
-            .environmentObject(WorkoutManager())
-    }
+#Preview {
+    MetricsView()
+        .environment(DrillManager())
+        .environmentObject(WorkoutManager())
 }

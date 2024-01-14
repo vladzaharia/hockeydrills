@@ -27,7 +27,7 @@ struct SessionPagingView: View {
             
             MetricsView().tag(Tab.metrics)
         }
-        .navigationTitle(drillManager.isDrillWorkout ? (drillManager.selectedDrill?.name ?? "") : (workoutManager.selectedWorkout?.name ?? ""))
+//        .navigationTitle(drillManager.isDrillWorkout ? (drillManager.selectedDrill?.name ?? "") : (workoutManager.selectedWorkout?.name ?? ""))
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .tabViewStyle(
@@ -56,15 +56,8 @@ struct SessionPagingView: View {
     }
 }
 
-//#Preview {
-//    SessionPagingView()
-//        .environment(DrillManager())
-//}
-
-struct SessionPagingView_Previews: PreviewProvider {
-    static var previews: some View {
-        SessionPagingView()
-            .environment(DrillManager())
-            .environmentObject(WorkoutManager())
-    }
+#Preview {
+    SessionPagingView()
+        .environment(DrillManager())
+        .environmentObject(WorkoutManager())
 }

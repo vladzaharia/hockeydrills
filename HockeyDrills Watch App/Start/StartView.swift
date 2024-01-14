@@ -24,16 +24,8 @@ struct StartView: View {
     }
 }
 
-//#Preview {
-//    StartView()
-//        .environmentObject(WorkoutManager())
-//        .environment(DrillManager())
-//}
-
-struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartView()
-            .environmentObject(WorkoutManager())
-            .environment(DrillManager())
-    }
+#Preview {
+    StartView()
+        .environmentObject(WorkoutManager())
+        .environment(DrillManager())
 }

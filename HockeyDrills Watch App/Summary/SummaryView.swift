@@ -102,14 +102,8 @@ struct SummaryMetricView: View {
     }
 }
 
-//#Preview {
-//    SummaryView()
-//}
-
-struct SummaryView_Previews: PreviewProvider {
-    static var previews: some View {
-        SummaryView()
-            .environment(DrillManager())
-            .environmentObject(WorkoutManager())
-    }
+#Preview {
+    SummaryView()
+        .environment(DrillManager())
+        .environmentObject(WorkoutManager())
 }
