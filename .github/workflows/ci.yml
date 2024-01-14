@@ -5,24 +5,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    name: Build and analyse using xcodebuild
-    runs-on: macos-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Build
-        env:
-          scheme: HockeyDrills
-        run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild clean build analyze -scheme "HockeyDrills Watch App" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
   r2-deploy:
     name: Deploy to R2
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
         - name: Checkout
           uses: actions/checkout@v2
