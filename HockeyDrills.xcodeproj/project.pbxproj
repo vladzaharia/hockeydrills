@@ -12,6 +12,7 @@
 		F54DE9A92B53B1AA0020176A /* SkipStepIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */; };
 		F54DE9AB2B53B4310020176A /* PauseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AA2B53B4310020176A /* PauseIntent.swift */; };
 		F54DE9AD2B53B45A0020176A /* ResumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */; };
+		F54DE9B32B53C01D0020176A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F54DE9B22B53C01D0020176A /* LICENSE */; };
 		F58F98842B513E1200D6A2B1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98832B513E1200D6A2B1 /* SummaryView.swift */; };
 		F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */; };
 		F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988D2B51438500D6A2B1 /* DrillsListView.swift */; };
@@ -78,6 +79,8 @@
 		F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipStepIntent.swift; sourceTree = "<group>"; };
 		F54DE9AA2B53B4310020176A /* PauseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseIntent.swift; sourceTree = "<group>"; };
 		F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeIntent.swift; sourceTree = "<group>"; };
+		F54DE9B12B53BFC80020176A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F54DE9B22B53C01D0020176A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F58F98832B513E1200D6A2B1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
 		F58F988D2B51438500D6A2B1 /* DrillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsListView.swift; sourceTree = "<group>"; };
@@ -142,6 +145,33 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		F54DE9AE2B53BF5A0020176A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F58F98882B51412A00D6A2B1 /* Start */,
+				F58F98872B51411500D6A2B1 /* Workout */,
+				F58F98892B51413D00D6A2B1 /* Summary */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F54DE9AF2B53BF6A0020176A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F58F988F2B51485000D6A2B1 /* WorkoutManager.swift */,
+				F58F98912B5148C000D6A2B1 /* DrillManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F54DE9B02B53BF860020176A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5E246712B51224100544911 /* Drills.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F58F98872B51411500D6A2B1 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +180,6 @@
 				F5E2467B2B51356800544911 /* DrillStepView.swift */,
 				F5E246752B512D4F00544911 /* MetricsView.swift */,
 				F5E246772B51324300544911 /* ElapsedTimeView.swift */,
-				F58F988F2B51485000D6A2B1 /* WorkoutManager.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -174,18 +203,11 @@
 			path = Summary;
 			sourceTree = "<group>";
 		};
-		F58F988C2B51437900D6A2B1 /* Drills */ = {
-			isa = PBXGroup;
-			children = (
-				F5E246712B51224100544911 /* Drills.swift */,
-				F58F98912B5148C000D6A2B1 /* DrillManager.swift */,
-			);
-			path = Drills;
-			sourceTree = "<group>";
-		};
 		F5E246312B51205300544911 = {
 			isa = PBXGroup;
 			children = (
+				F54DE9B22B53C01D0020176A /* LICENSE */,
+				F54DE9B12B53BFC80020176A /* README.md */,
 				F5E246422B51205300544911 /* HockeyDrills Watch App */,
 				F5E246532B51205600544911 /* HockeyDrills Watch AppTests */,
 				F5E2465D2B51205600544911 /* HockeyDrills Watch AppUITests */,
@@ -210,11 +232,10 @@
 				F58F98942B514CB900D6A2B1 /* HockeyDrills-Watch-App-Info.plist */,
 				F58F98932B514CB300D6A2B1 /* HockeyDrills Watch App.entitlements */,
 				F5E246432B51205300544911 /* HockeyDrillsApp.swift */,
-				F58F988C2B51437900D6A2B1 /* Drills */,
-				F58F98882B51412A00D6A2B1 /* Start */,
-				F58F98872B51411500D6A2B1 /* Workout */,
-				F58F98892B51413D00D6A2B1 /* Summary */,
 				F54DE9A32B53AEFA0020176A /* Intents */,
+				F54DE9AF2B53BF6A0020176A /* Managers */,
+				F54DE9B02B53BF860020176A /* Models */,
+				F54DE9AE2B53BF5A0020176A /* Views */,
 				F5E246472B51205600544911 /* Assets.xcassets */,
 				F5E246492B51205600544911 /* Preview Content */,
 			);
@@ -378,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54DE9B32B53C01D0020176A /* LICENSE in Resources */,
 				F5E2464B2B51205600544911 /* Preview Assets.xcassets in Resources */,
 				F5E246482B51205600544911 /* Assets.xcassets in Resources */,
 			);
