@@ -52,13 +52,18 @@ struct StartDrillIntent: StartWorkoutIntent {
         // Get Authorization
         WorkoutManager.shared.requestAuthorization()
         
-        // Start drill
-        if (DrillManager.shared.defaultDrill != nil) {
-            DrillManager.shared.startDrill(drill: DrillManager.shared.defaultDrill!)
+        DispatchQueue.main.async {
+            // Fetch drills
+            DrillManager.shared.fetchDrills()
+            
+            // Start default drill, if available
+            if (DrillManager.shared.defaultDrill != nil) {
+                DrillManager.shared.startDrill(drill: DrillManager.shared.defaultDrill!)
+            }
+            
+            // Start workout
+            WorkoutManager.shared.startWorkout(workoutType: .skatingSports)
         }
-        
-        // Start workout
-        WorkoutManager.shared.startWorkout(workoutType: .skatingSports)
         
         return .result()
     }

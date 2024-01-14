@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct HockeyDrills_Watch_AppApp: App {
     @StateObject var workoutManager = WorkoutManager.shared
-    @State var drillManager = DrillManager.shared
+    @StateObject var drillManager = DrillManager.shared
+    @StateObject var settingsManager = SettingsManager.shared
     
     var body: some Scene {
         WindowGroup {
@@ -21,7 +22,8 @@ struct HockeyDrills_Watch_AppApp: App {
                 SummaryView()
             }
             .environmentObject(workoutManager)
-            .environment(drillManager)
+            .environmentObject(drillManager)
+            .environmentObject(settingsManager)
         }
     }
 }

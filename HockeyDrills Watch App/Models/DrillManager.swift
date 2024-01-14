@@ -7,7 +7,7 @@
 
 import Foundation
 
-@Observable class DrillManager: NSObject, ObservableObject {
+class DrillManager: NSObject, ObservableObject {
     static let shared = DrillManager()
     
     // Internal drill storage
@@ -17,72 +17,89 @@ import Foundation
             var result: [DrillGroup] = []
             
             for category in categories {
-                result.append(DrillGroup(name: category ?? "Other Drills", drills: drills.filter { $0.category == category && !($0.defaultDrill ?? false) }))
+                let finalDrills = drills.filter { $0.category == category && !($0.defaultDrill ?? false) }
+                if !finalDrills.isEmpty {
+                    result.append(DrillGroup(name: category ?? "Other Drills", drills: finalDrills))
+                }
             }
             
-            drillGroups = result
+            DispatchQueue.main.async {
+                self.drillGroups = result
+                self.defaultDrill = self.drills.first { $0.defaultDrill ?? false }
+                
+                SettingsManager.shared.setLastUpdated()
+                
+                print("Drills updated!")
+            }
         }
     }
     
-    public var defaultDrill: Drill? {
-        get {
-            return drills.first { $0.defaultDrill ?? false }
-        }
-    }
+    @Published public var defaultDrill: Drill?
     
     // Public grouped drill listing
-    public var drillGroups: [DrillGroup] = []
+    @Published public var drillGroups: [DrillGroup] = []
     
     // Whether the current workout is drill-based
-    public var isDrillWorkout: Bool {
-        get {
-            return selectedDrill != nil
+    @Published public var isDrillWorkout: Bool = false
+    
+    // Current selected drill
+    @Published public var selectedDrill: Drill? {
+        didSet {
+            isDrillWorkout = true
         }
     }
     
-    // Current selected drill
-    public var selectedDrill: Drill?
-    
     // Current drill step
-    public var currentStep: Step?
+    @Published public var currentStep: Step?
     
     // Number of completed drill steps
-    public var numberCompleted = 0
+    @Published public var numberCompleted = 0
     
     // Completed drill steps
     private var completedSteps: [Step] = []
     
-    func fetchDrills() {
-        print("Fetching drills...")
+    func fetchDrills(force: Bool = false) {
+        drills = []
+        drillGroups = []
         
-        if let url = URL(string: "https://assets.polaris.rest/hockeydrills/example.json") {
-            let urlSession = URLSession.init(configuration: URLSessionConfiguration.default).dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print("Couldn't retrieve data!")
-                    print(error)
-                    
-                    return
-                }
-                                
-                if let data = data {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    
-                    do {
-                        let drills: [Drill] = try decoder.decode([Drill].self, from: data)
-                        self.drills = drills
-                    } catch let error {
-                        // TOOD: error handling
-                        print("Couldn't decode drills!")
-                        print(error)
-                    }
-                    
-                }
+        // Get settings
+        SettingsManager.shared.fetchSettings()        
+        let url = URL(string: SettingsManager.shared.drillsUrl)
+        
+        let sessionConfig = URLSessionConfiguration.default
+        
+        if force {
+            sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
+        }
+        
+        print("Fetching drills from " + url!.absoluteString)
+        
+        let urlSession = URLSession.init(configuration: sessionConfig).dataTask(with: url!) { (data, response, error) in
+            if let error = error {
+                print("Couldn't retrieve data!")
+                print(error)
+                
+                return
             }
             
-            // Send the request out
-            urlSession.resume()
+            if let data = data {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                do {
+                    let drills: [Drill] = try decoder.decode([Drill].self, from: data)
+                    self.drills = drills
+                } catch let error {
+                    // TOOD: error handling
+                    print("Couldn't decode drills!")
+                    print(error)
+                }
+            }
         }
+        
+        
+        // Send the request out
+        urlSession.resume()
     }
     
     func startDrill(id: String) {
@@ -104,60 +121,69 @@ import Foundation
     
     func endDrill() {
         selectedDrill = nil
+        isDrillWorkout = false
         numberCompleted = 0
         completedSteps = []
     }
     
     func resetSteps() {
-        completedSteps = []
-        currentStep = nil
-        nextStep()
+        DispatchQueue.main.async {
+            self.completedSteps = []
+            self.currentStep = nil
+            self.nextStep()
+        }
     }
     
     func completeStep() {
-        if selectedDrill == nil || currentStep == nil {
-            // TODO: Error
-            return
+        DispatchQueue.main.async {
+            if self.selectedDrill == nil || self.currentStep == nil {
+                // TODO: Error
+                return
+            }
+            
+            // Increment number of completed steps
+            self.numberCompleted += 1
+            
+            self.nextStep()
         }
-        
-        // Increment number of completed steps
-        numberCompleted += 1
-        
-        nextStep()
     }
     
     func skipStep() {
-        if selectedDrill == nil || currentStep == nil {
-            // TODO: Error
-            return
+        DispatchQueue.main.async {
+            if self.selectedDrill == nil || self.currentStep == nil {
+                // TODO: Error
+                return
+            }
+            
+            self.nextStep()
         }
-        
-        nextStep()
     }
     
     private func nextStep() {
-        if currentStep != nil {
-            // Add current step to completed list
-            completedSteps.append(currentStep!)
-        }
-                
-        let availableSteps = selectedDrill!.steps.filter { step in
-            !completedSteps.contains { completedStep in
-                step.id == completedStep.id
+        DispatchQueue.main.async {
+            if self.currentStep != nil {
+                // Add current step to completed list
+                self.completedSteps.append(self.currentStep!)
             }
+            
+            let availableSteps = self.selectedDrill!.steps.filter { step in
+                !self.completedSteps.contains { completedStep in
+                    step.id == completedStep.id
+                }
+            }
+            
+            if availableSteps.isEmpty {
+                // Reset completedSteps and re-run
+                return self.resetSteps()
+            }
+            
+            var newStep = availableSteps.randomElement()
+            if newStep?.minQty != nil && newStep?.maxQty != nil {
+                newStep!.qty = Int.random(in: (newStep!.minQty!)...(newStep!.maxQty!))
+            }
+            
+            self.currentStep = newStep
         }
-        
-        if availableSteps.isEmpty {
-            // Reset completedSteps and re-run
-            return resetSteps()
-        }
-        
-        var newStep = availableSteps.randomElement()
-        if newStep?.qty == 0 && newStep?.minQty != nil && newStep?.maxQty != nil {
-            newStep!.qty = Int.random(in: (newStep!.minQty!)...(newStep!.maxQty!))
-        }
-        
-        currentStep = newStep
     }
 }
 

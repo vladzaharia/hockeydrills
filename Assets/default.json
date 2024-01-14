@@ -1,0 +1,55 @@
+[
+    {
+      "id": "c06664a3-6900-4e13-974e-f9dbd9e012a4",
+      "name": "Hockey Basics",
+      "default_drill": true,
+      "category": "Hockey",
+      "icon": "figure.hockey",
+      "steps": [
+        {
+          "id": "85bf5ffa-5249-4257-a5a4-74dfc8a1986c",
+          "text": "Gliding Squats",
+          "descriptor": "Across the rink and back",
+          "min_qty": 1,
+          "max_qty": 3
+        },
+        {
+          "id": "21e481de-9aaa-4531-be83-ac70d3fc3b28",
+          "text": "The Egg",
+          "descriptor": "As far out as possible",
+          "qty": 1
+        },
+        {
+        "id": "f6889023-1e30-4f04-b240-081ec29ba1fb",
+          "text": "Crossovers",
+          "descriptor": "Across the rink and back",
+          "qty": 1
+        },
+        {
+          "id": "dc5e2767-c565-402d-bafd-51974998839e",
+          "text": "Slalom",
+          "descriptor": "Across the rink and back",
+          "qty": 1
+        },
+        {
+          "id": "c263bfe8-df98-4419-92ef-03383a0a8f3c",
+          "text": "Single Foot Glide",
+          "descriptor": "Across the rink and back",
+          "qty": 1
+        },
+        {
+            "id": "6769f60f-5187-4b27-aaa3-19bdb8b2f2c6",
+            "text": "Superman",
+            "min_qty": 3,
+            "max_qty": 5
+        },
+        {
+            "id": "958c1b54-2efd-4425-a707-0fa209c50a03",
+            "text": "Turning Circles",
+            "min_qty": 1,
+            "max_qty": 3
+        }
+      ]
+    }
+  ]
+  

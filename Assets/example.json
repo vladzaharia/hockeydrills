@@ -4,6 +4,7 @@
     "name": "Example Drill",
     "default_drill": true,
     "category": "Example Drills",
+    "icon": "figure.hockey",
     "steps": [
       {
         "id": "abfc3407-1f57-4895-a6ce-96c16e8a4b63",

@@ -10,12 +10,12 @@ import HealthKit
 
 struct DrillsListView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
         
     var body: some View {
-        if drillManager.drillGroups.isEmpty {
+        if drillManager.drillGroups.isEmpty && drillManager.defaultDrill == nil {
             VStack {
-                Image(systemName: "hourglass")
+                Image(systemName: "icloud.and.arrow.down.fill")
                     .font(.system(.title, design: .rounded))
                     .foregroundStyle(Color.blue.gradient)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
@@ -66,5 +66,6 @@ struct DrillsListView: View {
 #Preview {
     DrillsListView()
     .environmentObject(WorkoutManager())
-    .environment(DrillManager())
+    .environmentObject(DrillManager())
+    .environmentObject(SettingsManager())
 }

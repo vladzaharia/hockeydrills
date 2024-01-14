@@ -10,7 +10,7 @@ import HealthKit
 
 struct WorkoutsListView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
     
     var workouts: [HKWorkoutActivityType] = [.hockey, .skatingSports, .other]
     
@@ -68,5 +68,5 @@ extension HKWorkoutActivityType {
 #Preview {
     WorkoutsListView()
         .environmentObject(WorkoutManager())
-        .environment(DrillManager())
+        .environmentObject(DrillManager())
 }

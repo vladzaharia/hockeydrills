@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MetricsView: View {
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
     @EnvironmentObject var workoutManager: WorkoutManager
     
     var body: some View {
@@ -81,6 +81,6 @@ private struct MetricsTimelineSchedule: TimelineSchedule {
 
 #Preview {
     MetricsView()
-        .environment(DrillManager())
+        .environmentObject(DrillManager())
         .environmentObject(WorkoutManager())
 }

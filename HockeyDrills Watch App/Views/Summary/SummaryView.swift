@@ -10,7 +10,7 @@ import HealthKit
 
 struct SummaryView: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
     @EnvironmentObject var workoutManager: WorkoutManager
     
     @State private var durationFormatter: DateComponentsFormatter = {
@@ -141,6 +141,6 @@ struct SummaryMetricView: View {
 
 #Preview {
     SummaryView()
-        .environment(DrillManager())
+        .environmentObject(DrillManager())
         .environmentObject(WorkoutManager())
 }

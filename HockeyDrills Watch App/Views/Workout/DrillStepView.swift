@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DrillStepView: View {
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
         
     var body: some View {
         if (drillManager.currentStep == nil) {
@@ -23,7 +23,7 @@ struct DrillStepView: View {
         } else {
             VStack {
                 HStack(alignment: .lastTextBaseline) {
-                    Text(((drillManager.currentStep?.qty.unsafelyUnwrapped ?? 0).formatted(.number.precision(.fractionLength(0)))) + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
+                    Text(((drillManager.currentStep?.qty ?? 0).formatted(.number.precision(.fractionLength(0)))) + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
                         .monospacedDigit()
                         .lowercaseSmallCaps()
                     )
@@ -56,5 +56,5 @@ struct DrillStepView: View {
 
 #Preview {
     DrillStepView()
-        .environment(DrillManager())
+        .environmentObject(DrillManager())
 }

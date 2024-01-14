@@ -10,7 +10,7 @@ import SwiftUI
 struct SessionPagingView: View {
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @EnvironmentObject var workoutManager: WorkoutManager
-    @Environment(DrillManager.self) var drillManager: DrillManager
+    @EnvironmentObject var drillManager: DrillManager
     @State private var selection: Tab = .metrics
     
     enum Tab {
@@ -58,6 +58,6 @@ struct SessionPagingView: View {
 
 #Preview {
     SessionPagingView()
-        .environment(DrillManager())
+        .environmentObject(DrillManager())
         .environmentObject(WorkoutManager())
 }
