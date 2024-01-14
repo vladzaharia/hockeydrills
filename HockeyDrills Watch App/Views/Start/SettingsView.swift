@@ -38,7 +38,6 @@ struct SettingsView: View {
                 Text("Last Updated: " + settingsManager.lastUpdated).font(.footnote).foregroundStyle(Color.secondary)
             }
             .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.large)
             .onAppear {
                 settingsManager.fetchSettings()
             }

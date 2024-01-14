@@ -50,6 +50,20 @@
             "max_qty": 3
         }
       ]
+    },
+    {
+        "id": "cd05d3e6-da72-44c6-a748-84130f21c152",
+        "name": "Week 1",
+        "category": "Sno-King Lessons",
+        "icon": "1.square",
+        "steps": []
+    },
+    {
+        "id": "baaff58c-cdc9-4718-bef2-1ecbf60b8928",
+        "name": "Week 2",
+        "category": "Sno-King Lessons",
+        "icon": "2.square",
+        "steps": []
     }
   ]
   

@@ -28,7 +28,6 @@ struct WorkoutsListView: View {
         }
         .listStyle(.carousel)
         .navigationTitle("Workouts")
-        .navigationBarTitleDisplayMode(.large)
         .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
             SessionPagingView()
         }

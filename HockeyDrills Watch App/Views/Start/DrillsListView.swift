@@ -42,7 +42,6 @@ struct DrillsListView: View {
             }
             .listStyle(.carousel)
             .navigationTitle("Drills")
-            .navigationBarTitleDisplayMode(.large)
             .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
                 SessionPagingView()
             }
