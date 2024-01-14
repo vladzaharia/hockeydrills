@@ -13,6 +13,7 @@
 		F54DE9AB2B53B4310020176A /* PauseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AA2B53B4310020176A /* PauseIntent.swift */; };
 		F54DE9AD2B53B45A0020176A /* ResumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */; };
 		F54DE9B32B53C01D0020176A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F54DE9B22B53C01D0020176A /* LICENSE */; };
+		F54DE9B62B53C7790020176A /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = F54DE9B52B53C7790020176A /* example.json */; };
 		F58F98842B513E1200D6A2B1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98832B513E1200D6A2B1 /* SummaryView.swift */; };
 		F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */; };
 		F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988D2B51438500D6A2B1 /* DrillsListView.swift */; };
@@ -81,6 +82,7 @@
 		F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeIntent.swift; sourceTree = "<group>"; };
 		F54DE9B12B53BFC80020176A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F54DE9B22B53C01D0020176A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F54DE9B52B53C7790020176A /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 		F58F98832B513E1200D6A2B1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
 		F58F988D2B51438500D6A2B1 /* DrillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsListView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F54DE9B42B53C1240020176A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F54DE9B52B53C7790020176A /* example.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		F58F98872B51411500D6A2B1 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,11 +216,12 @@
 		F5E246312B51205300544911 = {
 			isa = PBXGroup;
 			children = (
-				F54DE9B22B53C01D0020176A /* LICENSE */,
-				F54DE9B12B53BFC80020176A /* README.md */,
+				F54DE9B42B53C1240020176A /* Assets */,
 				F5E246422B51205300544911 /* HockeyDrills Watch App */,
 				F5E246532B51205600544911 /* HockeyDrills Watch AppTests */,
 				F5E2465D2B51205600544911 /* HockeyDrills Watch AppUITests */,
+				F54DE9B22B53C01D0020176A /* LICENSE */,
+				F54DE9B12B53BFC80020176A /* README.md */,
 				F5E246392B51205300544911 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -392,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54DE9B62B53C7790020176A /* example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,26 +13,39 @@ struct DrillsListView: View {
     @Environment(DrillManager.self) var drillManager: DrillManager
         
     var body: some View {
-        List {
-            if (drillManager.defaultDrill != nil) {
-                Section(footer: Text("This drill will be started when first pressing the Action button.")) {
-                    getButton(drill: drillManager.defaultDrill!, color: Color.blue)
-                }
+        if drillManager.drillGroups.isEmpty {
+            VStack {
+                Image(systemName: "hourglass")
+                    .font(.system(.title, design: .rounded))
+                    .foregroundStyle(Color.blue.gradient)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
+                
+                Text("Loading drills...")
+            }.onAppear {
+                drillManager.fetchDrills()
             }
-            
-            ForEach(drillManager.drillGroups) { drillGroup in
-                Section(header: Text(drillGroup.name)) {
-                    ForEach(drillGroup.drills) { drill in
-                        getButton(drill: drill)
+        } else {
+            List {
+                if (drillManager.defaultDrill != nil) {
+                    Section(footer: Text("This drill will be started when first pressing the Action button.")) {
+                        getButton(drill: drillManager.defaultDrill!, color: Color.blue)
+                    }
+                }
+                
+                ForEach(drillManager.drillGroups) { drillGroup in
+                    Section(header: Text(drillGroup.name)) {
+                        ForEach(drillGroup.drills) { drill in
+                            getButton(drill: drill)
+                        }
                     }
                 }
             }
-        }
-        .listStyle(.carousel)
-        .navigationTitle("Drills")
-        .navigationBarTitleDisplayMode(.large)
-        .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
-            SessionPagingView()
+            .listStyle(.carousel)
+            .navigationTitle("Drills")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(isPresented: $workoutManager.hasActiveWorkout) {
+                SessionPagingView()
+            }
         }
     }
     
@@ -41,7 +54,7 @@ struct DrillsListView: View {
             drillManager.startDrill(drill: drill)
             workoutManager.startWorkout(workoutType: .skatingSports)
         } label: {
-            Label(drill.name, systemImage: drill.icon)
+            Label(drill.name, systemImage: drill.icon ?? "checklist")
         }
         .foregroundStyle(color.gradient)
         .padding(

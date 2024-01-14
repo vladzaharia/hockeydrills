@@ -22,8 +22,15 @@ struct SummaryView: View {
     
     var body: some View {
         if workoutManager.workout == nil {
-            ProgressView("Saving workout")
-                .navigationBarHidden(true)
+            VStack {
+                Image(systemName: "icloud.and.arrow.up.fill")
+                    .font(.system(.title, design: .rounded))
+                    .foregroundStyle(Color.blue.gradient)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
+                
+                Text("Saving workout...")
+            }
+            .navigationBarHidden(true)
         } else {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {

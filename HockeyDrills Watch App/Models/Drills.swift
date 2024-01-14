@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Drill: Identifiable {
+struct Drill: Identifiable, Codable {
     var id: String
     var name: String
-    var icon: String = "checklist"
-    var category: String = "Other Drills"
-    var defaultDrill = false
+    var icon: String?
+    var category: String?
+    var defaultDrill: Bool? = false
     var steps: [Step] = []
 }
 
@@ -22,10 +22,10 @@ extension Drill: Equatable {
     }
 }
 
-struct Step: Identifiable {
+struct Step: Identifiable, Codable {
     var id: String
     var text: String
-    var qty = 0
+    var qty: Int? = 0
     var minQty: Int?
     var maxQty: Int?
     var descriptor: String?

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "c06664a3-6900-4e13-974e-f9dbd9e012a4",
+    "name": "Example Drill",
+    "default_drill": true,
+    "category": "Example Drills",
+    "steps": [
+      {
+        "id": "abfc3407-1f57-4895-a6ce-96c16e8a4b63",
+        "text": "Something",
+        "qty": 1
+      },
+      {
+        "id": "b2b5b5a0-5b1a-4b0e-9b0a-5b0b6b0b6b0b",
+        "text": "Something Else",
+        "descriptor": "across the rink",
+        "qty": 1
+      },
+      {
+        "id": "957ad9e6-d643-4bc2-9558-d24ecb5f8769",
+        "text": "And another",
+        "min_qty": 1,
+        "max_qty": 5
+      },
+      {
+        "id": "58de587d-9aff-444d-9003-2e98981c2499",
+        "text": "Another one",
+        "qty": 1
+      },
+      {
+        "id": "59f6f32d-eb85-4e41-b278-d375922cdc7d",
+        "text": "DJ Khaled",
+        "descriptor": "in da house!",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "8b64c2d3-fcd9-4d07-ae1c-84831fa9010b",
+    "name": "Example Drill 2",
+    "category": "Example Drills",
+    "steps": [
+      {
+        "id": "f388c549-559b-41a3-ad5e-c4bc6beea92a",
+        "text": "Something",
+        "qty": 1
+      },
+      {
+        "id": "d862487a-302b-4fff-948d-1b4ff5c5f64a",
+        "text": "Something Else",
+        "descriptor": "across the rink and back",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "56a75181-3045-4479-8cff-aa7ef5af2256",
+    "name": "Example Drill 3",
+    "steps": [
+      {
+        "id": "616d73a3-e757-4f06-bd86-4dfb337d1364",
+        "text": "Something",
+        "qty": 1
+      },
+      {
+        "id": "cbe99a7a-4e21-48b9-bd4e-df9d8f3ab563",
+        "text": "Something Else",
+        "descriptor": "Across the rink",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "4c4b0458-2c61-47ad-8055-dc5517599673",
+    "name": "Example Drill 4",
+    "steps": [
+      {
+        "id": "769b0b9d-1d11-4760-af85-b92af7a301b1",
+        "text": "Something",
+        "qty": 1
+      },
+      {
+        "id": "845698d9-8b66-432d-9422-bcde30b7c56b",
+        "text": "Something Else",
+        "descriptor": "Across the rink",
+        "qty": 1
+      }
+    ]
+  }
+]

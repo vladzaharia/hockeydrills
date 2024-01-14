@@ -11,46 +11,27 @@ import Foundation
     static let shared = DrillManager()
     
     // Internal drill storage
-    private var drills: [Drill] = [
-        Drill(id: "example", name: "Example Drill", defaultDrill: true, steps: [
-            Step(id: UUID().uuidString, text: "Something", qty: 1),
-            Step(id: UUID().uuidString, text: "Something Else", qty: 1, descriptor: "across the rink"),
-            Step(id: UUID().uuidString, text: "And another", minQty: 1, maxQty: 5),
-            Step(id: UUID().uuidString, text: "Another one", qty: 1),
-            Step(id: UUID().uuidString, text: "DJ Khaled", qty: 1, descriptor: "in da house!")
-        ]),
-        Drill(id: "example2", name: "Example Drill 2", icon: "figure.hockey", steps: [
-           Step(id: UUID().uuidString, text: "Something", qty: 1),
-           Step(id: UUID().uuidString, text: "Something Else", qty: 1, descriptor: "across the rink and back")
-        ]),
-        Drill(id: "example3", name: "Example Drill 3", icon: "hockey.puck.fill", steps: [
-           Step(id: UUID().uuidString, text: "Something", qty: 1),
-           Step(id: UUID().uuidString, text: "Something Else", qty: 1, descriptor: "Across the rink")
-        ]),
-        Drill(id: "example4", name: "Example Drill 4", icon: "hockey.puck", steps: [
-           Step(id: UUID().uuidString, text: "Something", qty: 1),
-           Step(id: UUID().uuidString, text: "Something Else", qty: 1, descriptor: "Across the rink")
-        ])]
-    
-    public var defaultDrill: Drill? {
-        get {
-            return drills.first { $0.defaultDrill }
-        }
-    }
-    
-    // Public grouped drill listing
-    public var drillGroups: [DrillGroup] {
-        get {
+    private var drills: [Drill] = [] {
+        didSet {
             let categories = Set(drills.map { $0.category })
             var result: [DrillGroup] = []
             
             for category in categories {
-                result.append(DrillGroup(name: category, drills: drills.filter { $0.category == category && !$0.defaultDrill }))
+                result.append(DrillGroup(name: category ?? "Other Drills", drills: drills.filter { $0.category == category && !($0.defaultDrill ?? false) }))
             }
             
-            return result
+            drillGroups = result
         }
     }
+    
+    public var defaultDrill: Drill? {
+        get {
+            return drills.first { $0.defaultDrill ?? false }
+        }
+    }
+    
+    // Public grouped drill listing
+    public var drillGroups: [DrillGroup] = []
     
     // Whether the current workout is drill-based
     public var isDrillWorkout: Bool {
@@ -70,6 +51,39 @@ import Foundation
     
     // Completed drill steps
     private var completedSteps: [Step] = []
+    
+    func fetchDrills() {
+        print("Fetching drills...")
+        
+        if let url = URL(string: "https://assets.polaris.rest/hockeydrills/example.json") {
+            let urlSession = URLSession.init(configuration: URLSessionConfiguration.default).dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Couldn't retrieve data!")
+                    print(error)
+                    
+                    return
+                }
+                                
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    
+                    do {
+                        let drills: [Drill] = try decoder.decode([Drill].self, from: data)
+                        self.drills = drills
+                    } catch let error {
+                        // TOOD: error handling
+                        print("Couldn't decode drills!")
+                        print(error)
+                    }
+                    
+                }
+            }
+            
+            // Send the request out
+            urlSession.resume()
+        }
+    }
     
     func startDrill(id: String) {
         let drill = drills.first { $0.id == id }

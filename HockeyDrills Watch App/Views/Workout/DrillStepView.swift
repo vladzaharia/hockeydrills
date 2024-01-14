@@ -23,7 +23,7 @@ struct DrillStepView: View {
         } else {
             VStack {
                 HStack(alignment: .lastTextBaseline) {
-                    Text((drillManager.currentStep?.qty.formatted(.number.precision(.fractionLength(0))) ?? "0") + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
+                    Text(((drillManager.currentStep?.qty.unsafelyUnwrapped ?? 0).formatted(.number.precision(.fractionLength(0)))) + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
                         .monospacedDigit()
                         .lowercaseSmallCaps()
                     )
