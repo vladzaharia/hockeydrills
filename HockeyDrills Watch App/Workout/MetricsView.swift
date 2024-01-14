@@ -22,14 +22,14 @@ struct MetricsView: View {
                     elapsedTime: workoutManager.builder?.elapsedTime ?? 0,
                     showSubseconds: context.cadence == .live
                 )
-                .foregroundStyle(Color.blue)
+                .foregroundStyle(Color.blue.gradient)
                 
                 if drillManager.isDrillWorkout {
                     HStack {
                         Text(
                             drillManager.numberCompleted.formatted(.number.precision(.fractionLength(0)))
                         )
-                        .foregroundStyle(Color.green)
+                        .foregroundStyle(Color.green.gradient)
                         Text("drills")
                     }
                 }

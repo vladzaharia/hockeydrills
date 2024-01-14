@@ -15,7 +15,7 @@ struct DrillStepView: View {
             VStack {
                 Image(systemName: "exclamationmark.octagon")
                     .font(.system(.title, design: .rounded))
-                    .foregroundStyle(Color.red)
+                    .foregroundStyle(Color.red.gradient)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                 
                 Text("No drills available!")
@@ -23,7 +23,7 @@ struct DrillStepView: View {
         } else {
             VStack {
                 HStack(alignment: .lastTextBaseline) {
-                    Text((drillManager.currentStep?.qty.formatted(.number.precision(.fractionLength(0))) ?? "0") + "x").foregroundStyle(Color.blue).font(.system(.title2, design: .rounded)
+                    Text((drillManager.currentStep?.qty.formatted(.number.precision(.fractionLength(0))) ?? "0") + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
                         .monospacedDigit()
                         .lowercaseSmallCaps()
                     )

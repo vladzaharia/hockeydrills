@@ -43,7 +43,7 @@ struct DrillsListView: View {
         } label: {
             Label(drill.name, systemImage: drill.icon)
         }
-        .foregroundStyle(color)
+        .foregroundStyle(color.gradient)
         .padding(
             EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5)
         )

@@ -27,10 +27,13 @@ struct SummaryView: View {
         } else {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
+                    WorkoutTypeView(workout: workoutManager.selectedWorkout, drill: drillManager.selectedDrill)
+                    
                     SummaryMetricView(
                         title: "Total Time",
-                        value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? ""
-                    ).accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? "",
+                        color: Color.blue
+                    )
                     
                     if (drillManager.isDrillWorkout) {
                         SummaryMetricView(
@@ -38,8 +41,9 @@ struct SummaryView: View {
                             value: drillManager.numberCompleted
                                 .formatted(
                                     .number.precision(.fractionLength(0))
-                                )
-                        ).accentColor(Color.green)
+                                ),
+                            color: Color.green
+                        )
                     }
                     
                     SummaryMetricView(
@@ -54,8 +58,9 @@ struct SummaryView: View {
                                 usage: .workout,
                                 numberFormatStyle: .number.precision(.fractionLength(0))
                             )
-                        )
-                    ).accentColor(Color.pink)
+                        ),
+                        color: Color.pink
+                    )
                     
                     SummaryMetricView(
                         title: "Avg. Heart Rate",
@@ -63,8 +68,9 @@ struct SummaryView: View {
                             .formatted(
                                 .number.precision(.fractionLength(0))
                             )
-                        + " bpm"
-                    ).accentColor(Color.red)
+                        + " bpm",
+                        color: Color.red
+                    )
                     
                     Text("Activity Rings")
                     ActivityRingsView(healthStore: HKHealthStore()).frame(width: 50, height: 50)
@@ -86,16 +92,40 @@ struct SummaryView: View {
     }
 }
 
+struct WorkoutTypeView: View {
+    var workout: HKWorkoutActivityType?
+    var drill: Drill?
+    
+    var body: some View {
+        Text("Workout Type")
+        
+        Text((drill != nil ? drill?.name : workout?.name) ?? "N/A")
+            .font(.system(.title3, design: .rounded))
+            .padding(EdgeInsets(top: 2, leading: 0, bottom: drill != nil ? 0 : 2, trailing: 0))
+            .foregroundStyle(Color.primary.gradient)
+        
+        if (drill != nil) {
+            Text("(Ice Skating)")
+                .foregroundStyle(Color.secondary)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 2, trailing: 0))
+        }
+        
+        Divider()
+        Spacer(minLength: 10)
+    }
+}
+
 struct SummaryMetricView: View {
     var title: String
     var value: String
+    var color: Color
     
     var body: some View {
         Text(title)
         Text(value)
             .font(.system(.title2, design: .rounded)
                 .lowercaseSmallCaps())
-            .foregroundColor(.accentColor)
+            .foregroundStyle(color.gradient)
         
         Divider()
         Spacer(minLength: 10)
