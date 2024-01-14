@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F58F98842B513E1200D6A2B1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98832B513E1200D6A2B1 /* SummaryView.swift */; };
+		F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */; };
+		F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988D2B51438500D6A2B1 /* DrillsListView.swift */; };
+		F58F98902B51485000D6A2B1 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988F2B51485000D6A2B1 /* WorkoutManager.swift */; };
+		F58F98922B5148C000D6A2B1 /* DrillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98912B5148C000D6A2B1 /* DrillManager.swift */; };
+		F58F98962B514E8300D6A2B1 /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98952B514E8300D6A2B1 /* WorkoutsListView.swift */; };
 		F5E2463F2B51205300544911 /* HockeyDrills Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5E2463E2B51205300544911 /* HockeyDrills Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F5E246442B51205300544911 /* HockeyDrillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246432B51205300544911 /* HockeyDrillsApp.swift */; };
-		F5E246462B51205300544911 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246452B51205300544911 /* ContentView.swift */; };
+		F5E246462B51205300544911 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246452B51205300544911 /* StartView.swift */; };
 		F5E246482B51205600544911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E246472B51205600544911 /* Assets.xcassets */; };
 		F5E2464B2B51205600544911 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E2464A2B51205600544911 /* Preview Assets.xcassets */; };
 		F5E246552B51205600544911 /* HockeyDrills_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246542B51205600544911 /* HockeyDrills_Watch_AppTests.swift */; };
 		F5E2465F2B51205600544911 /* HockeyDrills_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2465E2B51205600544911 /* HockeyDrills_Watch_AppUITests.swift */; };
 		F5E246612B51205600544911 /* HockeyDrills_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246602B51205600544911 /* HockeyDrills_Watch_AppUITestsLaunchTests.swift */; };
+		F5E246722B51224100544911 /* Drills.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246712B51224100544911 /* Drills.swift */; };
+		F5E246742B512C8000544911 /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246732B512C8000544911 /* SessionPagingView.swift */; };
+		F5E246762B512D4F00544911 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246752B512D4F00544911 /* MetricsView.swift */; };
+		F5E246782B51324300544911 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246772B51324300544911 /* ElapsedTimeView.swift */; };
+		F5E2467A2B51346E00544911 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246792B51346E00544911 /* ControlsView.swift */; };
+		F5E2467C2B51356800544911 /* DrillStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2467B2B51356800544911 /* DrillStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +68,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F58F98832B513E1200D6A2B1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		F58F988D2B51438500D6A2B1 /* DrillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsListView.swift; sourceTree = "<group>"; };
+		F58F988F2B51485000D6A2B1 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		F58F98912B5148C000D6A2B1 /* DrillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillManager.swift; sourceTree = "<group>"; };
+		F58F98932B514CB300D6A2B1 /* HockeyDrills Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HockeyDrills Watch App.entitlements"; sourceTree = "<group>"; };
+		F58F98942B514CB900D6A2B1 /* HockeyDrills-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HockeyDrills-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F58F98952B514E8300D6A2B1 /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
 		F5E246382B51205300544911 /* HockeyDrills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HockeyDrills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E2463E2B51205300544911 /* HockeyDrills Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HockeyDrills Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E246432B51205300544911 /* HockeyDrillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyDrillsApp.swift; sourceTree = "<group>"; };
-		F5E246452B51205300544911 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5E246452B51205300544911 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		F5E246472B51205600544911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5E2464A2B51205600544911 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5E246502B51205600544911 /* HockeyDrills Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HockeyDrills Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +87,12 @@
 		F5E2465A2B51205600544911 /* HockeyDrills Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HockeyDrills Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E2465E2B51205600544911 /* HockeyDrills_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyDrills_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		F5E246602B51205600544911 /* HockeyDrills_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyDrills_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F5E246712B51224100544911 /* Drills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drills.swift; sourceTree = "<group>"; };
+		F5E246732B512C8000544911 /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
+		F5E246752B512D4F00544911 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		F5E246772B51324300544911 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		F5E246792B51346E00544911 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		F5E2467B2B51356800544911 /* DrillStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +120,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F58F98872B51411500D6A2B1 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				F5E246732B512C8000544911 /* SessionPagingView.swift */,
+				F5E246792B51346E00544911 /* ControlsView.swift */,
+				F5E2467B2B51356800544911 /* DrillStepView.swift */,
+				F5E246752B512D4F00544911 /* MetricsView.swift */,
+				F5E246772B51324300544911 /* ElapsedTimeView.swift */,
+				F58F988F2B51485000D6A2B1 /* WorkoutManager.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		F58F98882B51412A00D6A2B1 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				F5E246452B51205300544911 /* StartView.swift */,
+				F58F988D2B51438500D6A2B1 /* DrillsListView.swift */,
+				F58F98952B514E8300D6A2B1 /* WorkoutsListView.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		F58F98892B51413D00D6A2B1 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				F58F98832B513E1200D6A2B1 /* SummaryView.swift */,
+				F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		F58F988C2B51437900D6A2B1 /* Drills */ = {
+			isa = PBXGroup;
+			children = (
+				F5E246712B51224100544911 /* Drills.swift */,
+				F58F98912B5148C000D6A2B1 /* DrillManager.swift */,
+			);
+			path = Drills;
+			sourceTree = "<group>";
+		};
 		F5E246312B51205300544911 = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +185,13 @@
 		F5E246422B51205300544911 /* HockeyDrills Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				F58F98942B514CB900D6A2B1 /* HockeyDrills-Watch-App-Info.plist */,
+				F58F98932B514CB300D6A2B1 /* HockeyDrills Watch App.entitlements */,
 				F5E246432B51205300544911 /* HockeyDrillsApp.swift */,
-				F5E246452B51205300544911 /* ContentView.swift */,
+				F58F988C2B51437900D6A2B1 /* Drills */,
+				F58F98882B51412A00D6A2B1 /* Start */,
+				F58F98872B51411500D6A2B1 /* Workout */,
+				F58F98892B51413D00D6A2B1 /* Summary */,
 				F5E246472B51205600544911 /* Assets.xcassets */,
 				F5E246492B51205600544911 /* Preview Content */,
 			);
@@ -309,8 +381,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E246462B51205300544911 /* ContentView.swift in Sources */,
+				F58F98922B5148C000D6A2B1 /* DrillManager.swift in Sources */,
+				F5E2467C2B51356800544911 /* DrillStepView.swift in Sources */,
+				F5E2467A2B51346E00544911 /* ControlsView.swift in Sources */,
+				F5E246462B51205300544911 /* StartView.swift in Sources */,
+				F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */,
+				F5E246762B512D4F00544911 /* MetricsView.swift in Sources */,
+				F58F98902B51485000D6A2B1 /* WorkoutManager.swift in Sources */,
+				F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */,
 				F5E246442B51205300544911 /* HockeyDrillsApp.swift in Sources */,
+				F5E246722B51224100544911 /* Drills.swift in Sources */,
+				F5E246782B51324300544911 /* ElapsedTimeView.swift in Sources */,
+				F5E246742B512C8000544911 /* SessionPagingView.swift in Sources */,
+				F58F98962B514E8300D6A2B1 /* WorkoutsListView.swift in Sources */,
+				F58F98842B513E1200D6A2B1 /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,12 +555,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HockeyDrills Watch App/HockeyDrills Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HockeyDrills Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 48H7CLBV8Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HockeyDrills-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HockeyDrills;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -492,7 +578,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -501,12 +587,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HockeyDrills Watch App/HockeyDrills Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HockeyDrills Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 48H7CLBV8Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HockeyDrills-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HockeyDrills;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -523,7 +611,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -539,7 +627,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladzaharia.HockeyDrills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -555,7 +646,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladzaharia.HockeyDrills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

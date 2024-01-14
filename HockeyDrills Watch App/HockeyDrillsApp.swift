@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct HockeyDrills_Watch_AppApp: App {
+    @StateObject var workoutManager = WorkoutManager()
+    @State var drillManager = DrillManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                StartView().onAppear { workoutManager.requestAuthorization() }
+            }
+            .sheet(isPresented: $workoutManager.showingSummaryView) {
+                SummaryView()
+            }
+            .environmentObject(workoutManager)
+            .environment(drillManager)
         }
     }
 }
