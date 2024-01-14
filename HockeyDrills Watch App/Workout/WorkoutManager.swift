@@ -9,6 +9,8 @@ import Foundation
 import HealthKit
 
 class WorkoutManager: NSObject, ObservableObject {
+    static let shared = WorkoutManager()
+    
     var selectedWorkout: HKWorkoutActivityType?
     
     let healthStore  = HKHealthStore()
@@ -57,6 +59,9 @@ class WorkoutManager: NSObject, ObservableObject {
         let startDate = Date()
         session?.startActivity(with: startDate)
         builder?.beginCollection(withStart: startDate) { (success, error) in
+            DispatchQueue.main.async {
+                StartDrillIntent().donate(result: .result(actionButtonIntent: CompleteStepIntent()))
+            }
         }
         
         // Mark as having an active workout

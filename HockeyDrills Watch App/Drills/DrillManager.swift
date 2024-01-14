@@ -8,6 +8,8 @@
 import Foundation
 
 @Observable class DrillManager: NSObject, ObservableObject {
+    static let shared = DrillManager()
+    
     // Internal drill storage
     private var drills: [Drill] = [
         Drill(id: "example", name: "Example Drill", defaultDrill: true, steps: [

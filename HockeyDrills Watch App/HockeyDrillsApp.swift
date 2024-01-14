@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct HockeyDrills_Watch_AppApp: App {
-    @StateObject var workoutManager = WorkoutManager()
-    @State var drillManager = DrillManager()
+    @StateObject var workoutManager = WorkoutManager.shared
+    @State var drillManager = DrillManager.shared
     
     var body: some Scene {
         WindowGroup {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F54DE9A22B53ABA60020176A /* StartDrillIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A12B53ABA60020176A /* StartDrillIntent.swift */; };
+		F54DE9A52B53AF0A0020176A /* CompleteStepIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A42B53AF0A0020176A /* CompleteStepIntent.swift */; };
+		F54DE9A92B53B1AA0020176A /* SkipStepIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */; };
+		F54DE9AB2B53B4310020176A /* PauseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AA2B53B4310020176A /* PauseIntent.swift */; };
+		F54DE9AD2B53B45A0020176A /* ResumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */; };
 		F58F98842B513E1200D6A2B1 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F98832B513E1200D6A2B1 /* SummaryView.swift */; };
 		F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */; };
 		F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F988D2B51438500D6A2B1 /* DrillsListView.swift */; };
@@ -68,6 +73,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F54DE9A12B53ABA60020176A /* StartDrillIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDrillIntent.swift; sourceTree = "<group>"; };
+		F54DE9A42B53AF0A0020176A /* CompleteStepIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteStepIntent.swift; sourceTree = "<group>"; };
+		F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipStepIntent.swift; sourceTree = "<group>"; };
+		F54DE9AA2B53B4310020176A /* PauseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseIntent.swift; sourceTree = "<group>"; };
+		F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeIntent.swift; sourceTree = "<group>"; };
 		F58F98832B513E1200D6A2B1 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		F58F988A2B51414C00D6A2B1 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
 		F58F988D2B51438500D6A2B1 /* DrillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsListView.swift; sourceTree = "<group>"; };
@@ -120,6 +130,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F54DE9A32B53AEFA0020176A /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				F54DE9A12B53ABA60020176A /* StartDrillIntent.swift */,
+				F54DE9A42B53AF0A0020176A /* CompleteStepIntent.swift */,
+				F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */,
+				F54DE9AA2B53B4310020176A /* PauseIntent.swift */,
+				F54DE9AC2B53B45A0020176A /* ResumeIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		F58F98872B51411500D6A2B1 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +214,7 @@
 				F58F98882B51412A00D6A2B1 /* Start */,
 				F58F98872B51411500D6A2B1 /* Workout */,
 				F58F98892B51413D00D6A2B1 /* Summary */,
+				F54DE9A32B53AEFA0020176A /* Intents */,
 				F5E246472B51205600544911 /* Assets.xcassets */,
 				F5E246492B51205600544911 /* Preview Content */,
 			);
@@ -383,12 +406,17 @@
 			files = (
 				F58F98922B5148C000D6A2B1 /* DrillManager.swift in Sources */,
 				F5E2467C2B51356800544911 /* DrillStepView.swift in Sources */,
+				F54DE9A22B53ABA60020176A /* StartDrillIntent.swift in Sources */,
 				F5E2467A2B51346E00544911 /* ControlsView.swift in Sources */,
+				F54DE9AD2B53B45A0020176A /* ResumeIntent.swift in Sources */,
 				F5E246462B51205300544911 /* StartView.swift in Sources */,
 				F58F988B2B51414C00D6A2B1 /* ActivityRingsView.swift in Sources */,
+				F54DE9AB2B53B4310020176A /* PauseIntent.swift in Sources */,
+				F54DE9A52B53AF0A0020176A /* CompleteStepIntent.swift in Sources */,
 				F5E246762B512D4F00544911 /* MetricsView.swift in Sources */,
 				F58F98902B51485000D6A2B1 /* WorkoutManager.swift in Sources */,
 				F58F988E2B51438500D6A2B1 /* DrillsListView.swift in Sources */,
+				F54DE9A92B53B1AA0020176A /* SkipStepIntent.swift in Sources */,
 				F5E246442B51205300544911 /* HockeyDrillsApp.swift in Sources */,
 				F5E246722B51224100544911 /* Drills.swift in Sources */,
 				F5E246782B51324300544911 /* ElapsedTimeView.swift in Sources */,
