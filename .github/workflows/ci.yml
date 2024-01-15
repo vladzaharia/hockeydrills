@@ -23,9 +23,9 @@ jobs:
             method: jwt
             jwtGithubAudience: sigstore
             secrets: |
-              /ci-cd/hockeydrills/cloudflare R2_ACCOUNT_ID
-              /ci-cd/hockeydrills/cloudflare R2_ACCESS_KEY_ID
-              /ci-cd/hockeydrills/cloudflare R2_SECRET_ACCESS_KEY
+              /ci-cd/hockeydrills/cloudflare R2_ACCOUNT_ID ;
+              /ci-cd/hockeydrills/cloudflare R2_ACCESS_KEY_ID ;
+              /ci-cd/hockeydrills/cloudflare R2_SECRET_ACCESS_KEY ;
               /ci-cd/hockeydrills/cloudflare R2_BUCKET
         - name: Upload configs to R2
           uses: ryand56/r2-upload-action@latest
