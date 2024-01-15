@@ -2,14 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array/>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Your workout data will be read and displayed while a workout is in progress.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Workouts tracked by HockeyDrills on Apple Watch will be saved to HealthKit.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>UIBackgroundModes</key>
+	<array/>
 	<key>WKBackgroundModes</key>
 	<array>
 		<string>workout-processing</string>

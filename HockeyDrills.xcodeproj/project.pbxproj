@@ -634,6 +634,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HockeyDrills-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HockeyDrills;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout data will be read and displayed while a workout is in progress.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by HockeyDrills on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -666,6 +668,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HockeyDrills-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HockeyDrills;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout data will be read and displayed while a workout is in progress.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by HockeyDrills on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
