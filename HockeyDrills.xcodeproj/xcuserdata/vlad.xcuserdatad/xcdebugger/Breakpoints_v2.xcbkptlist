@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C2F13A6B-2E92-4051-BC7D-A8005B3B39F9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A9E28E1-3735-4D32-9ADA-99CA3E5262BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HockeyDrills Watch App/Models/DrillManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "fetchDrills(force:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53F12F71-7D6E-4E0C-83EE-5B71BC5C4041"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HockeyDrills Watch App/Models/SettingsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchSettings(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53F12F71-7D6E-4E0C-83EE-5B71BC5C4041 - 2a6ee2b8fe4e1ff4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings() -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "53F12F71-7D6E-4E0C-83EE-5B71BC5C4041 - b0b4a2e434b8d5f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HockeyDrills_Watch_App.SettingsManager.fetchSettings() -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "53F12F71-7D6E-4E0C-83EE-5B71BC5C4041 - 108ba642d0253ce4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings() -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C382A2E2-D349-41A8-96A3-22EAF71EE85E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HockeyDrills Watch App/Models/DrillManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "fetchDrills(force:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C4114F5-B818-41DE-B42F-1E5A0E99E685"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HockeyDrills Watch App/Models/SettingsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchSettings(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C4114F5-B818-41DE-B42F-1E5A0E99E685 - 108ba642d0253c85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings() -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "5C4114F5-B818-41DE-B42F-1E5A0E99E685 - 840860708af75696"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HockeyDrills_Watch_App.DrillsUrl) -&gt; Swift.Bool in closure #1 () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings() -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "5C4114F5-B818-41DE-B42F-1E5A0E99E685 - 70b749cb72e437fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "5C4114F5-B818-41DE-B42F-1E5A0E99E685 - 4f796030e06c82cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HockeyDrills_Watch_App.DrillsUrl) -&gt; Swift.Bool in closure #1 () -&gt; () in HockeyDrills_Watch_App.SettingsManager.fetchSettings(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "HockeyDrills Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vlad/Documents/Repos.nosync/HockeyDrills/HockeyDrills%20Watch%20App/Models/SettingsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
