@@ -10,6 +10,7 @@
 		F54835972B53E1B900F1E106 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54835962B53E1B900F1E106 /* SettingsView.swift */; };
 		F54835992B53E8C300F1E106 /* hockey.json in Resources */ = {isa = PBXBuildFile; fileRef = F54835982B53E8C300F1E106 /* hockey.json */; };
 		F548359B2B552C9E00F1E106 /* snoking.json in Resources */ = {isa = PBXBuildFile; fileRef = F548359A2B552C9E00F1E106 /* snoking.json */; };
+		F54836412B554BAF00F1E106 /* _list.json in Resources */ = {isa = PBXBuildFile; fileRef = F54836402B554BAF00F1E106 /* _list.json */; };
 		F54DE9A22B53ABA60020176A /* StartDrillIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A12B53ABA60020176A /* StartDrillIntent.swift */; };
 		F54DE9A52B53AF0A0020176A /* CompleteStepIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A42B53AF0A0020176A /* CompleteStepIntent.swift */; };
 		F54DE9A92B53B1AA0020176A /* SkipStepIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */; };
@@ -82,6 +83,7 @@
 		F54835962B53E1B900F1E106 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F54835982B53E8C300F1E106 /* hockey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hockey.json; sourceTree = "<group>"; };
 		F548359A2B552C9E00F1E106 /* snoking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snoking.json; sourceTree = "<group>"; };
+		F54836402B554BAF00F1E106 /* _list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = _list.json; sourceTree = "<group>"; };
 		F54DE9A12B53ABA60020176A /* StartDrillIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDrillIntent.swift; sourceTree = "<group>"; };
 		F54DE9A42B53AF0A0020176A /* CompleteStepIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteStepIntent.swift; sourceTree = "<group>"; };
 		F54DE9A82B53B1AA0020176A /* SkipStepIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipStepIntent.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		F54DE9B42B53C1240020176A /* R2Drills */ = {
 			isa = PBXGroup;
 			children = (
+				F54836402B554BAF00F1E106 /* _list.json */,
 				F54DE9B52B53C7790020176A /* example.json */,
 				F54835982B53E8C300F1E106 /* hockey.json */,
 				F548359A2B552C9E00F1E106 /* snoking.json */,
@@ -418,6 +421,7 @@
 				F548359B2B552C9E00F1E106 /* snoking.json in Resources */,
 				F54DE9B32B53C01D0020176A /* LICENSE in Resources */,
 				F54835992B53E8C300F1E106 /* hockey.json in Resources */,
+				F54836412B554BAF00F1E106 /* _list.json in Resources */,
 				F5E2464B2B51205600544911 /* Preview Assets.xcassets in Resources */,
 				F5E246482B51205600544911 /* Assets.xcassets in Resources */,
 			);

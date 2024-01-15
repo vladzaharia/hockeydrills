@@ -15,8 +15,8 @@ struct SettingsView: View {
         if settingsManager.hasFetchedData {
             VStack {
                 Picker("Drills to Load", selection: $settingsManager.drillsUrl) {
-                    ForEach(DrillLocationsEnum.allCases) { location in
-                        Text(location.text).tag(location.id)
+                    ForEach($settingsManager.drillsUrls) { location in
+                        Label(location.name.wrappedValue, systemImage: location.icon.wrappedValue).tag(location.url.wrappedValue)
                     }
                 }
                 .pickerStyle(.navigationLink)
@@ -39,7 +39,7 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .onAppear {
-                settingsManager.fetchSettings()
+                settingsManager.fetchSettings() {}
             }
         }
     }

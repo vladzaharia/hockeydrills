@@ -7,24 +7,11 @@
 
 import Foundation
 
-enum DrillLocationsEnum: String, CaseIterable, Identifiable {
-    case hockey = "https://assets.polaris.rest/hockeydrills/hockey.json"
-    case snoking = "https://assets.polaris.rest/hockeydrills/snoking.json"
-    
-    case example = "https://assets.polaris.rest/hockeydrills/example.json"
-        
-    var text: String {
-        switch self {
-        case .hockey:
-            return "Hockey Drills"
-        case .snoking:
-            return "Sno-King Lessons"
-        case .example:
-            return "Demo Data"
-        }
-    }
-    
-    var id: String { self.rawValue }
+struct DrillsUrl: Identifiable, Codable {
+    var id: String
+    var name: String
+    var icon: String
+    var url: String
 }
 
 class SettingsManager: NSObject, ObservableObject {
@@ -33,16 +20,59 @@ class SettingsManager: NSObject, ObservableObject {
     @Published var hasFetchedData: Bool = false
     @Published var drillsUrl: String = ""
     @Published var lastUpdated: String = ""
+    @Published var drillsUrls: [DrillsUrl] = []
     
     func clearSettings() {
         UserDefaults.standard.removeObject(forKey: "drills-url")
         UserDefaults.standard.removeObject(forKey: "drills-last-update")
     }
     
-    func fetchSettings() {
-        drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? DrillLocationsEnum.hockey.rawValue
-        lastUpdated = UserDefaults.standard.date(forKey: "drills-last-update") ?? "Never updated"
-        hasFetchedData = true
+    func fetchSettings(completion: @escaping ()->()) {
+        fetchDrillUrls() {
+            let defaultDrillUrl = self.drillsUrls.first { $0.id == "1beaa7e5-46a3-45f9-96ba-ad17f4c2b194" }
+            
+            self.drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? (defaultDrillUrl?.url ?? "")
+            self.lastUpdated = UserDefaults.standard.date(forKey: "drills-last-update") ?? "Never updated"
+            
+            self.hasFetchedData = true
+            
+            completion()
+        }
+    }
+    
+    func fetchDrillUrls(completion: @escaping ()->()) {
+        let url = "https://assets.polaris.rest/hockeydrills/_list.json"
+        
+        print("Fetching drill URLs from " + url)
+        
+        let urlSession = URLSession.init(configuration: URLSessionConfiguration.default).dataTask(with: URL(string: url)!) { (data, response, error) in
+            if let error = error {
+                print("Couldn't retrieve data!")
+                print(error)
+                
+                return
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    do {
+                        let drillsUrls: [DrillsUrl] = try JSONDecoder().decode([DrillsUrl].self, from: data)
+                        self.drillsUrls = drillsUrls
+                        completion()
+                    } catch let error {
+                        // TOOD: error handling
+                        print("Couldn't decode drill list!")
+                        print(error)
+                    }
+                }
+            } else {
+                completion()
+            }
+        }
+        
+        
+        // Send the request out
+        urlSession.resume()
     }
     
     func setDrillsUrl(selectedUrl: String) {

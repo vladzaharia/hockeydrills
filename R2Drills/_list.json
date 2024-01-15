@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1beaa7e5-46a3-45f9-96ba-ad17f4c2b194",
+        "name": "Hockey Drills",
+        "icon": "figure.hockey",
+        "url": "https://assets.polaris.rest/hockeydrills/hockey.json"
+    },
+    {
+        "id": "91f711db-c9ac-43fa-bd1b-a49f71ec615d",
+        "name": "Sno-King Lessons",
+        "icon": "graduationcap",
+        "url": "https://assets.polaris.rest/hockeydrills/snoking.json"
+    },
+    {
+        "id": "b1533961-76ee-486e-89d2-ef4b934a4c6c",
+        "name": "Example Drills",
+        "icon": "flask",
+        "url": "https://assets.polaris.rest/hockeydrills/example.json"
+    }
+]
