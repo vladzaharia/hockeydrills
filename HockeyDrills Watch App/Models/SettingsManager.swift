@@ -8,13 +8,17 @@
 import Foundation
 
 enum DrillLocationsEnum: String, CaseIterable, Identifiable {
-    case defaultList = "https://assets.polaris.rest/hockeydrills/default.json"
+    case hockey = "https://assets.polaris.rest/hockeydrills/hockey.json"
+    case snoking = "https://assets.polaris.rest/hockeydrills/snoking.json"
+    
     case example = "https://assets.polaris.rest/hockeydrills/example.json"
         
     var text: String {
         switch self {
-        case .defaultList:
-            return "Default Drills"
+        case .hockey:
+            return "Hockey Drills"
+        case .snoking:
+            return "Sno-King Lessons"
         case .example:
             return "Demo Data"
         }
@@ -36,7 +40,7 @@ class SettingsManager: NSObject, ObservableObject {
     }
     
     func fetchSettings() {
-        drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? DrillLocationsEnum.example.rawValue
+        drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? DrillLocationsEnum.hockey.rawValue
         lastUpdated = UserDefaults.standard.date(forKey: "drills-last-update") ?? "Never updated"
         hasFetchedData = true
     }
