@@ -28,7 +28,8 @@ struct Step: Identifiable, Codable {
     var qty: Int? = 0
     var minQty: Int?
     var maxQty: Int?
-    var descriptor: String?
+    var modifier: String?
+    var instruction: String?
 }
 
 extension Step: Equatable {

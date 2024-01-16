@@ -9,7 +9,8 @@
       {
         "id": "85bf5ffa-5249-4257-a5a4-74dfc8a1986c",
         "text": "Gliding Squats",
-        "descriptor": "Across the rink and back",
+        "modifier": "Across the rink and back",
+        "instruction": "Take a few strides, then go down into a hockey position squat. Hold this as long as possible.",
         "min_qty": 1,
         "max_qty": 3
       },

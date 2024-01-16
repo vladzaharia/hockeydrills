@@ -28,7 +28,6 @@ struct MetricsView: View {
                 
                 Divider()
                     .frame(maxWidth: 175)
-                    .overlay(Color.white.gradient)
                 
                 if drillManager.isDrillWorkout {
                     HStack {

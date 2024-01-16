@@ -113,34 +113,48 @@ struct DrillStepView: View {
             } else {
                 VStack {
                     HStack(alignment: .lastTextBaseline) {
-                        Text(((drillManager.currentStep?.qty ?? 0).formatted(.number.precision(.fractionLength(0)))) + "x").foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
+                        Text(((drillManager.currentStep?.qty ?? 0)
+                            .formatted(.number.precision(.fractionLength(0)))) + "x")
+                        .foregroundStyle(Color.blue.gradient).font(.system(.title2, design: .rounded)
                             .monospacedDigit()
                             .lowercaseSmallCaps()
                         )
-                        Spacer()
-                        Text(drillManager.currentStep?.text ?? "").font(.system(.title3, design: .rounded)).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        
+                        Spacer(minLength: 10)
+                        
+                        Text(drillManager.currentStep?.text ?? "")
+                            .font(.system(size: 22, design: .rounded))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .multilineTextAlignment(.leading)
                     }
                     
-                    Spacer()
+                    Text(drillManager.currentStep?.modifier ?? "")
+                        .multilineTextAlignment(.center)
+                        .font(.footnote)
+                        .foregroundStyle(Color.gray)
                     
-                    Text(drillManager.currentStep?.descriptor ?? "")
-                        .frame(maxWidth: .infinity, alignment: .center)
+                    Divider()
+                        .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
                     
-                    Spacer()
-                    
-                    if settingsManager.showCompleteButton {
-                        Button {
-                            withAnimation(.easeInOut) {
-                                showCompleteModal = true
-                                drillManager.completeStep()
+                    VStack {
+                        if settingsManager.showCompleteButton {
+                            Button {
+                                withAnimation(.easeInOut) {
+                                    showCompleteModal = true
+                                    drillManager.completeStep()
+                                }
+                            } label: {
+                                Image(systemName: "checkmark")
                             }
-                        } label: {
-                            Image(systemName: "checkmark")
+                            .tint(Color.blue)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        } else {
+                            Text(drillManager.currentStep?.instruction ?? "")
+                                .multilineTextAlignment(.center)
                         }
-                        .tint(Color.blue)
-                        .font(.title3)
-                        .fontWeight(.semibold)
                     }
+                    .frame(maxHeight: .infinity)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
