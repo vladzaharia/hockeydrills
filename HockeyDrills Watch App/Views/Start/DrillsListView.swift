@@ -17,11 +17,17 @@ struct DrillsListView: View {
             VStack {
                 Image(systemName: "icloud.and.arrow.down.fill")
                     .font(.system(.title, design: .rounded))
-                    .foregroundStyle(Color.blue.gradient)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                 
                 Text("Loading drills...")
-            }.onAppear {
+                    .font(.system(.title3, design: .rounded))
+                    .multilineTextAlignment(.center)
+            }
+            .edgesIgnoringSafeArea(.all)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.blue.gradient)
+            .foregroundStyle(Color.black.gradient)
+            .onAppear {
                 drillManager.fetchDrills()
             }
         } else {

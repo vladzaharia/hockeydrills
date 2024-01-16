@@ -18,7 +18,9 @@ struct ControlsView: View {
             HStack {
                 VStack {
                     Button {
-                        workoutManager.endWorkout()
+                        withAnimation(.easeInOut) {
+                            workoutManager.endWorkout()
+                        }
                     } label: {
                         Image(systemName: "xmark")
                     }
@@ -29,7 +31,9 @@ struct ControlsView: View {
                 
                 VStack {
                     Button {
-                        workoutManager.togglePause()
+                        withAnimation(.easeInOut) {
+                            workoutManager.togglePause()
+                        }
                     } label: {
                         Image(systemName: workoutManager.running ? "pause" : "play")
                     }
@@ -45,7 +49,9 @@ struct ControlsView: View {
                 HStack {
                     VStack {
                         Button {
-                            drillManager.resetSteps()
+                            withAnimation(.easeInOut) {
+                                drillManager.resetSteps()
+                            }
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
                         }
