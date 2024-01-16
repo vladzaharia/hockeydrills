@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DrillStepView: View {
     @EnvironmentObject var drillManager: DrillManager
+    @EnvironmentObject var settingsManager: SettingsManager
         
     var body: some View {
         if (drillManager.currentStep == nil) {
@@ -38,18 +39,28 @@ struct DrillStepView: View {
                 
                 Spacer()
                 
-                Button {
-                    drillManager.completeStep()
-                } label: {
-                    Image(systemName: "checkmark")
-                }
-                .tint(Color.blue)
-                .font(.title2)
-                .onLongPressGesture {
-                    drillManager.skipStep()
+                if settingsManager.showCompleteButton {
+                    Button {
+                        drillManager.completeStep()
+                    } label: {
+                        Image(systemName: "checkmark")
+                    }
+                    .tint(Color.blue)
+                    .font(.title2)
+                    .onLongPressGesture {
+                        drillManager.skipStep()
+                    }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                settingsManager.fetchSettings {}
+            }
+            .onLongPressGesture {
+                if !settingsManager.showCompleteButton {
+                    drillManager.skipStep()
+                }
+            }
         }
     }
 }

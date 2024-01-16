@@ -20,6 +20,7 @@ class SettingsManager: NSObject, ObservableObject {
     @Published var hasFetchedData: Bool = false
     @Published var drillsUrl: String = ""
     @Published var lastUpdated: String = ""
+    @Published var showCompleteButton: Bool = false
     @Published var drillsUrls: [DrillsUrl] = []
     
     func clearSettings() {
@@ -33,6 +34,7 @@ class SettingsManager: NSObject, ObservableObject {
             
             self.drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? (defaultDrillUrl?.url ?? "")
             self.lastUpdated = UserDefaults.standard.date(forKey: "drills-last-update") ?? "Never updated"
+            self.showCompleteButton = UserDefaults.standard.bool(forKey: "show-complete-button")
             
             self.hasFetchedData = true
             
@@ -80,6 +82,11 @@ class SettingsManager: NSObject, ObservableObject {
         
         UserDefaults.standard.set(selectedUrl, forKey: "drills-url")
         UserDefaults.standard.removeObject(forKey: "drills-last-updated")
+    }
+    
+    func setShowComplete(showComplete: Bool) {
+        self.showCompleteButton = showComplete
+        UserDefaults.standard.set(showComplete, forKey: "show-complete-button")
     }
     
     func setLastUpdated() {
