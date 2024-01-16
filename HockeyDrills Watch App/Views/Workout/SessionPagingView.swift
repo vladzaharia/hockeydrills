@@ -11,6 +11,7 @@ struct SessionPagingView: View {
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @EnvironmentObject var workoutManager: WorkoutManager
     @EnvironmentObject var drillManager: DrillManager
+    @EnvironmentObject var settingsManager: SettingsManager
     @State private var selection: Tab = .metrics
     
     enum Tab {
@@ -27,13 +28,13 @@ struct SessionPagingView: View {
             
             MetricsView().tag(Tab.metrics)
         }
-//        .navigationTitle(drillManager.isDrillWorkout ? (drillManager.selectedDrill?.name ?? "") : (workoutManager.selectedWorkout?.name ?? ""))
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .tabViewStyle(
             PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic)
         )
         .onAppear {
+            settingsManager.fetchSettings {}
             displayDefaultView()
         }
         .onChange(of: workoutManager.running) { _, newValue in

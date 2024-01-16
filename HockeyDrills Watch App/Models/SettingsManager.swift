@@ -34,7 +34,7 @@ class SettingsManager: NSObject, ObservableObject {
             
             self.drillsUrl = UserDefaults.standard.string(forKey: "drills-url") ?? (defaultDrillUrl?.url ?? "")
             self.lastUpdated = UserDefaults.standard.date(forKey: "drills-last-update") ?? "Never updated"
-            self.showCompleteButton = UserDefaults.standard.bool(forKey: "show-complete-button")
+            self.showCompleteButton = UserDefaults.standard.bool(forKey: "show-complete-button") || self.showCompleteButton
             
             self.hasFetchedData = true
             

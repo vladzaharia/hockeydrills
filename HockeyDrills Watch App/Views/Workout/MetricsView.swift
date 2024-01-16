@@ -10,6 +10,7 @@ import SwiftUI
 struct MetricsView: View {
     @EnvironmentObject var drillManager: DrillManager
     @EnvironmentObject var workoutManager: WorkoutManager
+    @EnvironmentObject var settingsManager: SettingsManager
     
     var body: some View {
         TimelineView(
@@ -22,41 +23,54 @@ struct MetricsView: View {
                     elapsedTime: workoutManager.builder?.elapsedTime ?? 0,
                     showSubseconds: context.cadence == .live
                 )
-                .foregroundStyle(Color.blue.gradient)
+                    .foregroundStyle(Color.blue.gradient)
+                    .fontWeight(.medium)
+                
+                Divider()
+                    .frame(maxWidth: 175)
+                    .overlay(Color.white.gradient)
                 
                 if drillManager.isDrillWorkout {
                     HStack {
                         Text(
                             drillManager.numberCompleted.formatted(.number.precision(.fractionLength(0)))
                         )
+                        .fontWeight(.medium)
                         .foregroundStyle(Color.green.gradient)
-                        Text("drills")
+                        Text("drills").foregroundStyle(Color.white.gradient)
                     }
                 }
                 
-                Text(
-                    Measurement(
-                        value: workoutManager.activeEnergy,
-                        unit: UnitEnergy.kilocalories
-                    ).formatted(
-                        .measurement(
-                            width: .abbreviated,
-                            usage: .workout,
-                            numberFormatStyle: .number.precision(.fractionLength(0))
+                HStack {
+                    Text(
+                        Measurement(
+                            value: workoutManager.activeEnergy,
+                            unit: UnitEnergy.kilocalories
+                        ).value.formatted(
+                            .number.precision(.fractionLength(0))
                         )
                     )
-                )
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color.orange.gradient)
+                    
+                    Text("cal").foregroundStyle(Color.white.gradient)
+                }
                 
-                Text(
-                    workoutManager.heartRate.formatted(.number.precision(.fractionLength(0)))
-                    + " bpm"
-                )
+                HStack {
+                    Text(
+                        workoutManager.heartRate.formatted(.number.precision(.fractionLength(0)))
+                    )
+                    .foregroundStyle(Color.red.gradient)
+                    .fontWeight(.medium)
+                    
+                    Text("bpm").foregroundStyle(Color.white.gradient)
+                }
             }
             .font(.system(.title, design: .rounded)
                 .monospacedDigit()
                 .lowercaseSmallCaps()
             )
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
     }
 }
@@ -83,4 +97,5 @@ private struct MetricsTimelineSchedule: TimelineSchedule {
     MetricsView()
         .environmentObject(DrillManager())
         .environmentObject(WorkoutManager())
+        .environmentObject(SettingsManager())
 }

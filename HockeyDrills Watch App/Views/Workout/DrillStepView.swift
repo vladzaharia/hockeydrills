@@ -53,9 +53,11 @@ struct DrillStepView: View {
                         .font(.system(.title2, design: .rounded))
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 1, trailing: 20))
                         .multilineTextAlignment(.center)
+                        .fontWeight(.medium)
                     Text("You completed a set!")
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         .multilineTextAlignment(.center)
+                        .fontWeight(.medium)
                 }
                 .edgesIgnoringSafeArea(.all)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -66,11 +68,13 @@ struct DrillStepView: View {
                     Image(systemName: "checkmark")
                         .font(.system(.largeTitle, design: .rounded))
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
-                    
+                        .fontWeight(.bold)
+
                     Text("Completed Step")
                         .font(.system(.title2, design: .rounded))
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         .multilineTextAlignment(.center)
+                        .fontWeight(.medium)
                 }
                 .edgesIgnoringSafeArea(.all)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -86,6 +90,7 @@ struct DrillStepView: View {
                         .font(.system(.title2, design: .rounded))
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         .multilineTextAlignment(.center)
+                        .fontWeight(.medium)
                 }
                 .edgesIgnoringSafeArea(.all)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -100,11 +105,11 @@ struct DrillStepView: View {
                     Text("No drills available!")
                         .font(.system(.title3, design: .rounded))
                         .multilineTextAlignment(.center)
+                        .fontWeight(.medium)
                 }
                 .edgesIgnoringSafeArea(.all)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .background(Color.red.gradient)
-                .foregroundStyle(Color.black.gradient)
+                .foregroundStyle(Color.red.gradient)
             } else {
                 VStack {
                     HStack(alignment: .lastTextBaseline) {
@@ -133,7 +138,8 @@ struct DrillStepView: View {
                             Image(systemName: "checkmark")
                         }
                         .tint(Color.blue)
-                        .font(.title2)
+                        .font(.title3)
+                        .fontWeight(.semibold)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

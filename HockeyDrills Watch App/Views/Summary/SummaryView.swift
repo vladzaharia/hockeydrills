@@ -30,6 +30,7 @@ struct SummaryView: View {
                 Text("Saving workout...")
                     .font(.system(.title3, design: .rounded))
                     .multilineTextAlignment(.center)
+                    .fontWeight(.semibold)
             }
             .edgesIgnoringSafeArea(.all)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)

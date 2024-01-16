@@ -21,6 +21,7 @@ struct DrillsListView: View {
                 
                 Text("Loading drills...")
                     .font(.system(.title3, design: .rounded))
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
             }
             .edgesIgnoringSafeArea(.all)
