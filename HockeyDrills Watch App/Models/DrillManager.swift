@@ -59,47 +59,50 @@ class DrillManager: NSObject, ObservableObject {
     private var completedSteps: [Step] = []
     
     func fetchDrills(force: Bool = false) {
-        drills = []
-        drillGroups = []
-        
-        // Get settings
-        SettingsManager.shared.fetchSettings() {
-            let url = URL(string: SettingsManager.shared.drillsUrl)
+        if (force || drillGroups.isEmpty) {
+            drills = []
+            drillGroups = []
             
-            let sessionConfig = URLSessionConfiguration.default
-            
-            if force {
-                sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
-            }
-            
-            print("Fetching drills from " + url!.absoluteString)
-            
-            let urlSession = URLSession.init(configuration: sessionConfig).dataTask(with: url!) { (data, response, error) in
-                if let error = error {
-                    print("Couldn't retrieve data!")
-                    print(error)
-                    
-                    return
+            // Get settings
+            SettingsManager.shared.fetchSettings() {
+                let url = URL(string: SettingsManager.shared.drillsUrl)
+                
+                let sessionConfig = URLSessionConfiguration.default
+                
+                if force {
+                    sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
                 }
                 
-                if let data = data {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    
-                    do {
-                        let drills: [Drill] = try decoder.decode([Drill].self, from: data)
-                        self.drills = drills
-                    } catch let error {
-                        // TOOD: error handling
-                        print("Couldn't decode drills!")
+                print("Fetching drills from " + url!.absoluteString)
+                
+                let urlSession = URLSession.init(configuration: sessionConfig).dataTask(with: url!) { (data, response, error) in
+                    if let error = error {
+                        print("Couldn't retrieve data!")
                         print(error)
+                        
+                        return
+                    }
+                    
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        do {
+                            let drills: [Drill] = try decoder.decode([Drill].self, from: data)
+                            self.drills = drills
+                        } catch let error {
+                            // TOOD: error handling
+                            print("Couldn't decode drills!")
+                            print(error)
+                        }
                     }
                 }
+                
+                // Send the request out
+                urlSession.resume()
             }
-            
-            
-            // Send the request out
-            urlSession.resume()
+        } else {
+            print("Skipping drill fetching as they already exist")
         }
     }
     

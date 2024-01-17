@@ -17,38 +17,58 @@
       {
         "id": "21e481de-9aaa-4531-be83-ac70d3fc3b28",
         "text": "The Egg",
-        "descriptor": "As far out as possible",
+        "modifier": "As far out as possible",
+        "instruction": "Move your feet out and carve the ice, making egg shapes. Keep your upper body still.",
         "qty": 1
       },
       {
         "id": "f6889023-1e30-4f04-b240-081ec29ba1fb",
         "text": "Crossovers",
-        "descriptor": "Across the rink and back",
+        "modifier": "Across the rink and back",
+        "instruction": "Looking straight ahead, cross one foot over the other. Flip sides at the halfway point.",
         "qty": 1
       },
       {
         "id": "dc5e2767-c565-402d-bafd-51974998839e",
         "text": "Slalom",
-        "descriptor": "Across the rink and back",
+        "instruction": "Skate around obstacles, dribbling a puck while you do.",
         "qty": 1
       },
       {
         "id": "c263bfe8-df98-4419-92ef-03383a0a8f3c",
         "text": "Single Foot Glide",
-        "descriptor": "Across the rink and back",
+        "modifier": "Across the rink and back",
+        "instruction": "Take a few strides, then lift one foot off the ground. Try to keep straight.",
         "qty": 1
       },
       {
         "id": "6769f60f-5187-4b27-aaa3-19bdb8b2f2c6",
         "text": "Superman",
+        "instruction": "Take a few strides, then fall forward. Try getting up while still sliding.",
         "min_qty": 3,
         "max_qty": 5
       },
       {
         "id": "958c1b54-2efd-4425-a707-0fa209c50a03",
-        "text": "Turning Circles",
+        "text": "Edge Circles",
+        "instruction": "Take a few strides, then do a full circle using the heel of your inner foot.",
         "min_qty": 1,
         "max_qty": 3
+      },
+      {
+        "id": "f4ab71ce-bada-49c4-be58-4335780c0ccd",
+        "text": "Skate",
+        "modifier": "Around the rink",
+        "instruction": "Skate as fast as possible, keeping controlled and in a hockey position when gliding.",
+        "min_qty": 3,
+        "max_qty": 6
+      },
+      {
+        "id": "f4ab71ce-bada-49c4-be58-4335780c0ccd",
+        "text": "Puck Dribbling",
+        "instruction": "Dribble the puck around the rink, trying to keep the puck as controlled as possible.",
+        "min_qty": 3,
+        "max_qty": 6
       }
     ]
   }

@@ -72,7 +72,6 @@ class SettingsManager: NSObject, ObservableObject {
             }
         }
         
-        
         // Send the request out
         urlSession.resume()
     }

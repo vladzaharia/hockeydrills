@@ -27,7 +27,9 @@ class WorkoutManager: NSObject, ObservableObject {
         didSet {
             // Sheet dismissed
             if showingSummaryView == false {
-                resetWorkout()
+                DispatchQueue.main.async {
+                    self.resetWorkout()
+                }
             }
         }
     }
@@ -44,6 +46,7 @@ class WorkoutManager: NSObject, ObservableObject {
             builder = session?.associatedWorkoutBuilder()
         } catch {
             // TODO: Handle any exceptions.
+            print("Couldn't create session!")
             return
         }
 
@@ -54,14 +57,14 @@ class WorkoutManager: NSObject, ObservableObject {
         
         builder?.delegate = self
         session?.delegate = self
+        
+        print("Starting workout")
 
         // Start the workout session and begin data collection.
         let startDate = Date()
         session?.startActivity(with: startDate)
         builder?.beginCollection(withStart: startDate) { (success, error) in
-            DispatchQueue.main.async {
-                StartDrillIntent().donate(result: .result(actionButtonIntent: CompleteStepIntent()))
-            }
+            StartDrillIntent().donate(result: .result(actionButtonIntent: CompleteStepIntent()))
         }
         
         // Mark as having an active workout
@@ -88,12 +91,20 @@ class WorkoutManager: NSObject, ObservableObject {
     }
 
     func endWorkout() {
-        session?.end()
+        print("Ending workout")
+        hasActiveWorkout = false
         showingSummaryView = true
+        
+        if (session != nil) {
+            session?.end()
+        } else {
+            print("No session to end!")
+            resetWorkout()
+        }
     }
     
     func resetWorkout() {
-        selectedWorkout = nil
+        print("Resetting workout")
         builder = nil
         session = nil
         workout = nil
@@ -155,6 +166,8 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
                         didChangeTo toState: HKWorkoutSessionState,
                         from fromState: HKWorkoutSessionState,
                         date: Date) {
+        print("Received delegate call")
+        
         DispatchQueue.main.async {
             self.running = toState == .running
         }
@@ -163,6 +176,8 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
+                    print("Finishing workout")
+                    
                     DispatchQueue.main.async {
                         self.workout = workout
                     }
@@ -172,7 +187,9 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
 
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
-
+        // TODO: Handle failure
+        print("Workout couldn't start!")
+        print(error)
     }
 }
 
@@ -184,7 +201,7 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
         for type in collectedTypes {
             guard let quantityType = type as? HKQuantityType else { return }
-
+            
             let statistics = workoutBuilder.statistics(for: quantityType)
 
             // Update the published values.

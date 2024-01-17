@@ -8,46 +8,46 @@
       {
         "id": "188f485c-92ac-475c-8828-9704b0876280",
         "text": "Fall Recovery",
-        "descriptor": "On your knees and back up",
+        "modifier": "On your knees and back up",
         "min_qty": 3,
         "max_qty": 5
       },
       {
         "id": "4337ee56-6168-4fb6-bbe2-3ebd6de0d63d",
         "text": "Push off",
-        "descriptor": "Across the rink with each foot",
+        "modifier": "Across the rink with each foot",
         "qty": 1
       },
       {
         "id": "0b6457f3-0ff4-482d-8025-593ed106c87b",
         "text": "C Curves",
-        "descriptor": "One foot, then the other",
+        "modifier": "One foot, then the other",
         "qty": 2
       },
       {
         "id": "9aa32ed6-e483-4fdd-a607-03981ca21c4b",
         "text": "Full Power Stride",
-        "descriptor": "Across the rink and back",
+        "modifier": "Across the rink and back",
         "minQty": 1,
         "maxQty": 3
       },
       {
         "id": "b4d77c09-a537-4090-882e-e0fda23d11bc",
         "text": "Pizza Stops",
-        "descriptor": "Few strides, then stop",
+        "modifier": "Few strides, then stop",
         "minQty": 1,
         "maxQty": 3
       },
       {
         "id": "0b6457f3-0ff4-482d-8025-593ed106c87b",
         "text": "C Curves",
-        "descriptor": "One foot, then the other",
+        "modifier": "One foot, then the other",
         "qty": 2
       },
       {
         "id": "c98d28e2-90bf-478d-9fad-468019521001",
         "text": "Make Snow",
-        "descriptor": "1 minute each leg",
+        "modifier": "1 minute each leg",
         "qty": 1
       }
     ]
@@ -61,31 +61,31 @@
       {
         "id": "c98d28e2-90bf-478d-9fad-468019521001",
         "text": "Make Snow",
-        "descriptor": "1 minute each leg",
+        "modifier": "1 minute each leg",
         "qty": 1
       },
       {
         "id": "f6889023-1e30-4f04-b240-081ec29ba1fb",
         "text": "Crossovers",
-        "descriptor": "Swap at the red line",
+        "modifier": "Swap at the red line",
         "qty": 2
       },
       {
         "id": "dc5e2767-c565-402d-bafd-51974998839e",
         "text": "Slalom",
-        "descriptor": "Across the rink and back",
+        "modifier": "Across the rink and back",
         "qty": 3
       },
       {
         "id": "21e481de-9aaa-4531-be83-ac70d3fc3b28",
         "text": "The Egg",
-        "descriptor": "As far out as possible",
+        "modifier": "As far out as possible",
         "qty": 2
       },
       {
         "id": "0b6457f3-0ff4-482d-8025-593ed106c87b",
         "text": "C Curves",
-        "descriptor": "One foot, then the other",
+        "modifier": "One foot, then the other",
         "qty": 2
       }
     ]

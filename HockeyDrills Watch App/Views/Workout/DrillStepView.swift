@@ -160,7 +160,7 @@ struct DrillStepView: View {
             }
         }
         .onChange(of: drillManager.currentStep) {
-            if (drillManager.numberCompleted % drillManager.selectedDrill!.steps.count == 0) {
+            if (drillManager.numberCompleted != 0 && drillManager.numberCompleted % drillManager.selectedDrill!.steps.count == 0) {
                 withAnimation(.easeInOut) {
                     showCongratulationsModal = true
                 }

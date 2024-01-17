@@ -9,29 +9,32 @@
       {
         "id": "abfc3407-1f57-4895-a6ce-96c16e8a4b63",
         "text": "Something",
-        "qty": 1
+        "qty": 1,
+        "instruction": "This is a instruction of the step"
       },
       {
         "id": "b2b5b5a0-5b1a-4b0e-9b0a-5b0b6b0b6b0b",
         "text": "Something Else",
-        "descriptor": "across the rink",
+        "modifier": "across the rink",
         "qty": 1
       },
       {
         "id": "957ad9e6-d643-4bc2-9558-d24ecb5f8769",
         "text": "And another",
         "min_qty": 1,
-        "max_qty": 5
+        "max_qty": 5,
+        "instruction": "Do something for a while, then stop doing it."
       },
       {
         "id": "58de587d-9aff-444d-9003-2e98981c2499",
         "text": "Another one",
-        "qty": 1
+        "qty": 1,
+        "instruction": "The instruction can be quite long, and that's ok, because it will wrap around and be fine. Eventually, you'll even be able to scroll through it when I get the chance to add that in."
       },
       {
         "id": "59f6f32d-eb85-4e41-b278-d375922cdc7d",
         "text": "DJ Khaled",
-        "descriptor": "in da house!",
+        "modifier": "in da house!",
         "qty": 1
       }
     ]
@@ -49,7 +52,7 @@
       {
         "id": "d862487a-302b-4fff-948d-1b4ff5c5f64a",
         "text": "Something Else",
-        "descriptor": "across the rink and back",
+        "modifier": "across the rink and back",
         "qty": 1
       }
     ]
@@ -66,7 +69,7 @@
       {
         "id": "cbe99a7a-4e21-48b9-bd4e-df9d8f3ab563",
         "text": "Something Else",
-        "descriptor": "Across the rink",
+        "modifier": "Across the rink",
         "qty": 1
       }
     ]
@@ -83,7 +86,7 @@
       {
         "id": "845698d9-8b66-432d-9422-bcde30b7c56b",
         "text": "Something Else",
-        "descriptor": "Across the rink",
+        "modifier": "Across the rink",
         "qty": 1
       }
     ]
