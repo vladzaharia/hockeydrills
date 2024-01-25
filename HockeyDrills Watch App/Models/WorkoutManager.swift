@@ -7,6 +7,7 @@
 
 import Foundation
 import HealthKit
+import WatchKit
 
 class WorkoutManager: NSObject, ObservableObject {
     static let shared = WorkoutManager()
@@ -67,6 +68,9 @@ class WorkoutManager: NSObject, ObservableObject {
             StartDrillIntent().donate(result: .result(actionButtonIntent: CompleteStepIntent()))
         }
         
+        // Enable water lock
+        WKInterfaceDevice.current().enableWaterLock()
+        
         // Mark as having an active workout
         self.hasActiveWorkout = true
         self.running = true
@@ -91,7 +95,7 @@ class WorkoutManager: NSObject, ObservableObject {
     }
 
     func endWorkout() {
-        print("Ending workout")
+        print("Ending workout")        
         hasActiveWorkout = false
         showingSummaryView = true
         
